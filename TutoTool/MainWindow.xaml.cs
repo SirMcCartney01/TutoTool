@@ -27,68 +27,42 @@ namespace TutoTool
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void BtnExportExcel_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("En construcción");
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             Stream myStream = null;
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Selecciona el archivo",
+                Filter = "Archivos de Texto (*.txt)|*.txt",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
+            bool? result = openFileDialog.ShowDialog();
 
-            openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
-
-            if (openFileDialog1.ShowDialog() == true)
+            if (result != null)
             {
                 try
                 {
-                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                    if ((myStream = openFileDialog.OpenFile()) != null)
                     {
                         using (myStream)
                         {
                             MessageBox.Show("Ya se abrio el archivo");
-                       }
+                        }
+
+                        // Reading the opened file
                     }
                 }
-                catch (Exception ex)
+                catch (InvalidOperationException)
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    // Do nothing if user cancels
                 }
             }
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked_3(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked_4(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CheckBox_Checked_5(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
