@@ -1,44 +1,74 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace TutoTool
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        // I know this is shit but i can't think of any other solution
+        // Create a file in which this sesion will work
+        DateTime now = DateTime.Now;
+        int count = 0;
+        string date;
+        string time;
+        string myFileName;
+
+
+        // LEARNING HOW TO TELL TIME
+
+
         public MainWindow()
         {
+
+
+            date = now.ToString("dd-MM-yyyy");
+            time = now.ToString("HH-mm-ss");
+            myFileName = $"{date}-{time}.xls";
+
             InitializeComponent();
         }
 
         private void BtnExportExcel_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("En construcción");
+            // TODO: verify if user checked at least one box
+
+            // TODO: verify if user opened a file
+
+            // TODO: write or append to xls file
+
+            count++;
+            Debug.WriteLine(myFileName);
+            string shitToPrint = $"Test # {count} \t check \t it \t out";
+
+            // If the file doesn't exists
+            if (!File.Exists(myFileName))
+            {
+                using (StreamWriter sw = File.CreateText(myFileName))
+                {
+                    sw.WriteLine(shitToPrint);
+                }
+            }
+            else
+            {
+                // File already exists
+                using (StreamWriter sw = File.AppendText(myFileName))
+                {
+                    sw.WriteLine(shitToPrint);
+                }
+            }
         }
 
         private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
         {
+
             Stream myStream = null;
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Title = "Selecciona el archivo",
-                Filter = "Archivos de Texto (*.txt)|*.txt",
+                Filter = "Archivos PDF (*.pdf)|*.pdf",
                 FilterIndex = 2,
                 RestoreDirectory = true
             };
@@ -52,7 +82,8 @@ namespace TutoTool
                     {
                         using (myStream)
                         {
-                            MessageBox.Show("Ya se abrio el archivo");
+                            string filename = Path.GetFileName(openFileDialog.FileName);
+                            MessageBox.Show($"Abriendo archivo {filename}", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
 
                         // Reading the opened file
@@ -60,7 +91,7 @@ namespace TutoTool
                 }
                 catch (InvalidOperationException)
                 {
-                    // Do nothing if user cancels
+                    // Users cancels
                 }
             }
         }
