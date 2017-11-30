@@ -84,6 +84,12 @@ namespace TutoTool
                         {
                             string filename = Path.GetFileName(openFileDialog.FileName);
                             MessageBox.Show($"Abriendo archivo {filename}", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                            PDFParser pdfParser = new PDFParser();
+                            // extract the text
+                            //Console.Write(""+ pdfParser.ExtractText(filename, Path.GetFileNameWithoutExtension(filename) + ".pdf"));
+                            Console.Write("Sup bitch!\n");
+                            Console.Write("Test"+filename, "test.txt");
+
                         }
 
                         // Reading the opened file

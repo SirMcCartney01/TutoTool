@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2008
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoTool", "TutoTool\TutoTool.csproj", "{AB659B0B-17B5-49BB-8FFC-876272E63C4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9329DD18-23C5-439D-B108-AC2F030FD281}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -34,6 +34,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.licensekey">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\itextsharp.licensekey.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xfaworker">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\itextsharp.xfaworker.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\Cesar\Aplicaciones\ITextSharp\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -68,6 +95,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PDFParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
