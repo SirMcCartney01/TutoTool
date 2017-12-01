@@ -82,22 +82,18 @@ namespace TutoTool
                     {
                         using (myStream)
                         {
-                            string filename = Path.GetFileName(openFileDialog.FileName);
+                            string filename = Path.GetFullPath(openFileDialog.FileName);
                             MessageBox.Show($"Abriendo archivo {filename}", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                             PDFParser pdfParser = new PDFParser();
                             // extract the text
-                            //Console.Write(""+ pdfParser.ExtractText(filename, Path.GetFileNameWithoutExtension(filename) + ".pdf"));
-                            Console.Write("Sup bitch!\n");
-                            Console.Write("Test"+filename, "test.txt");
-
+                            pdfParser.ExtractText(Path.GetFullPath(openFileDialog.FileName), Path.GetFileNameWithoutExtension(filename)+".doc");
                         }
-
                         // Reading the opened file
                     }
                 }
                 catch (InvalidOperationException)
                 {
-                    // Users cancels
+                    //User cancels file choosing
                 }
             }
         }
