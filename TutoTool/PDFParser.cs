@@ -33,6 +33,7 @@ namespace TutoTool
         public bool ExtractText(string inFileName, string outFileName)
         {
             StreamWriter outFile = null;
+
             try
             {
                 // Create a reader for the given PDF file
@@ -43,7 +44,7 @@ namespace TutoTool
                 Console.Write("Processing: ");
 
                 int totalLen = 68;
-                float charUnit = ((float)totalLen) / (float)reader.NumberOfPages;
+                float charUnit = totalLen / (float) reader.NumberOfPages;
                 int totalWritten = 0;
                 float curUnit = 0;
 

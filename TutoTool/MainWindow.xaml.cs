@@ -22,8 +22,6 @@ namespace TutoTool
 
         public MainWindow()
         {
-
-
             date = now.ToString("dd-MM-yyyy");
             time = now.ToString("HH-mm-ss");
             myFileName = $"{date}-{time}.xls";
@@ -59,6 +57,7 @@ namespace TutoTool
                     sw.WriteLine(shitToPrint);
                 }
             }
+            MessageBox.Show($"Archivo {myFileName} creado con exito", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
@@ -87,8 +86,8 @@ namespace TutoTool
                             PDFParser pdfParser = new PDFParser();
                             // extract the text
                             //Console.Write(""+ pdfParser.ExtractText(filename, Path.GetFileNameWithoutExtension(filename) + ".pdf"));
-                            Console.Write("Sup bitch!\n");
-                            Console.Write("Test"+filename, "test.txt");
+                            Debug.WriteLine("Sup bitch!");
+                            Debug.WriteLine($"Test {filename}");
 
                         }
 
