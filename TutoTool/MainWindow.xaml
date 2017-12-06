@@ -19,12 +19,12 @@
         <Label Content="Seleccionar campos" Grid.Column="2" HorizontalAlignment="Left" Height="46" Margin="41,106,0,0" VerticalAlignment="Top" Width="244" FontSize="24" FontWeight="Bold"/>
         <Viewbox Grid.Column="2" Margin="3,173,432,141" Stretch="Fill">
             <Grid Height="155" Width="372">
-                <CheckBox Content="Nombre" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="156" FontSize="20"/>
-                <CheckBox Content="Matricula" HorizontalAlignment="Left" Height="43" Margin="0,58,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
-                <CheckBox Content="Periodo " HorizontalAlignment="Left" Height="34" Margin="210,0,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
-                <CheckBox Content="Status" HorizontalAlignment="Left" Height="43" Margin="210,58,0,0" VerticalAlignment="Top" Width="132" FontSize="20"/>
-                <CheckBox Content="Promedio" HorizontalAlignment="Left" Margin="0,112,0,0" VerticalAlignment="Top" Height="43" Width="156" FontSize="20"/>
-                <CheckBox Content="Recursos" HorizontalAlignment="Left" Height="43" Margin="210,112,0,0" VerticalAlignment="Top" Width="162" FontSize="20"/>
+                <CheckBox x:Name="NameCheckBox" Content="Nombre" Height="34" VerticalAlignment="Top" FontSize="20" Margin="0,0,216,0"/>
+                <CheckBox x:Name="IDCheckBox" Content="Matricula" HorizontalAlignment="Left" Height="43" Margin="0,58,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
+                <CheckBox x:Name="PeriodCheckBox" Content="Periodo " HorizontalAlignment="Left" Height="34" Margin="210,0,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
+                <CheckBox x:Name="StatusCheckBox" Content="Status" HorizontalAlignment="Left" Height="43" Margin="210,58,0,0" VerticalAlignment="Top" Width="132" FontSize="20"/>
+                <CheckBox x:Name="GPACheckBox" Content="Promedio" HorizontalAlignment="Left" Margin="0,112,0,0" VerticalAlignment="Top" Height="43" Width="156" FontSize="20" />
+                <CheckBox x:Name="FailCheckBox" Content="Recursos" HorizontalAlignment="Left" Height="43" Margin="210,112,0,0" VerticalAlignment="Top" Width="162" FontSize="20"/>
             </Grid>
         </Viewbox>
         <Label Content="Seleccionar cárdex PDF" Grid.Column="2" HorizontalAlignment="Left" Height="46" Margin="486,106,0,0" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold"/>
