@@ -36,7 +36,7 @@ namespace TutoTool
             {
 
                 //Verify if user checked at least one box
-                if(NameCheckBox.IsChecked == false && PeriodCheckBox.IsChecked == false && IDCheckBox.IsChecked == false && StatusCheckBox.IsChecked == false && GPACheckBox.IsChecked == false && PercentageCheckBox.IsChecked == false)
+                if(NameCheckBox.IsChecked == false  && IDCheckBox.IsChecked == false && StatusCheckBox.IsChecked == false && GPACheckBox.IsChecked == false && PercentageCheckBox.IsChecked == false)
                 {
                     MessageBox.Show("Debes elegir al menos una opcion", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
@@ -54,6 +54,10 @@ namespace TutoTool
                         MessageBox.Show($"Hubo un error al intentar abrir el archivo\n{ex}", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
 
+                    for (int i = 0; i < words.Length; i++)
+                    {
+                        Console.WriteLine(words[i]+""+i);
+                    }
                     //Get student name
                     if (NameCheckBox.IsChecked == true)
                     {
@@ -86,6 +90,7 @@ namespace TutoTool
                                     break;
                                     
                             }
+
                         }
                     }
 
@@ -119,18 +124,29 @@ namespace TutoTool
                         }
                     }
 
+                    //Get student percentage
+                    if (PercentageCheckBox.IsChecked == true)
+                    {
+
+                        for (int i = 0; i < words.Length; i++)
+                        {
+                            if (words[i] == "aritmético")
+                            {
+                                shitToPrint += $"{words[i + 12]}\t";
+                            }
+                        }
+                    }
+
                     //Get student GPA
                     if (GPACheckBox.IsChecked == true)
                     {
-                        int position = words.Length - 42;
-                        shitToPrint += $"{words[position]}\t";
-                    }
-
-                    //Get student percentage
-                    if(PercentageCheckBox.IsChecked == true)
-                    {
-                        int position = words.Length - 45;
-                        shitToPrint += $"{words[position]}\t";
+                        for(int i = 0; i < words.Length; i++)
+                        {
+                            if(words[i] == "aritmético")
+                            {
+                                shitToPrint += $"{words[i+15]}\t";
+                            }
+                        }
                     }
 
                     // If the file doesn't exists
@@ -151,6 +167,7 @@ namespace TutoTool
                             MessageBox.Show("Alumno agregado!", "Correcto!", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
                     }
+                    shitToPrint = null;
                 }
             }
             else
