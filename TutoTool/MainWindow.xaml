@@ -13,7 +13,7 @@
             <ColumnDefinition Width="807*"/>
             <ColumnDefinition Width="33*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnExportExcel" Content="Exportar a excel" Grid.Column="2" HorizontalAlignment="Left" Height="54" Margin="336,370,0,0" VerticalAlignment="Top" Width="168" Click="BtnExportExcel_Click" FontSize="20"/>
+        <Button x:Name="btnExportExcel" Content="Exportar a Excel" Grid.Column="2" HorizontalAlignment="Left" Height="54" Margin="336,370,0,0" VerticalAlignment="Top" Width="168" Click="BtnExportExcel_Click" FontSize="20"/>
         <Label x:Name="label" Content="TutoTool" Grid.Column="2" HorizontalAlignment="Left" Height="58" Margin="318,10,0,0" VerticalAlignment="Top" Width="156" FontSize="36" FontWeight="Bold" RenderTransformOrigin="1.49,0.667"/>
         <Button x:Name="btnOpenFile" Content="Seleccionar archivo"  HorizontalAlignment="Left" Height="62" Margin="504,212,0,0" VerticalAlignment="Top" Width="194" Click="BtnOpenFile_Click" Grid.Column="2" FontSize="20" RenderTransformOrigin="0.304,0.065" />
         <Label Content="Seleccionar campos" Grid.Column="2" HorizontalAlignment="Left" Height="46" Margin="41,106,0,0" VerticalAlignment="Top" Width="244" FontSize="24" FontWeight="Bold"/>

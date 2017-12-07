@@ -31,18 +31,18 @@ namespace TutoTool
         private void BtnExportExcel_Click(object sender, RoutedEventArgs e)
         {
 
-            // TODO: verify if user opened a file
+            //Verify if user opened a file
             if (filenameDOC != null)
             {
 
-                // TODO: verify if user checked at least one box
+                //Verify if user checked at least one box
                 if(NameCheckBox.IsChecked == false && PeriodCheckBox.IsChecked == false && IDCheckBox.IsChecked == false && StatusCheckBox.IsChecked == false && GPACheckBox.IsChecked == false && PercentageCheckBox.IsChecked == false)
                 {
                     MessageBox.Show("Debes elegir al menos una opcion", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
-                    // TODO: write or append to xls file
+                    //Write or append to xls file
                     try
                     {
                         tokens = File.ReadAllText($"{filenameDOC}.doc");
@@ -53,37 +53,33 @@ namespace TutoTool
                     {
                         MessageBox.Show($"Hubo un error al intentar abrir el archivo\n{ex}", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                    
-                    for (int i = 0; i < words.Length; i++)
-                    {
-                        Console.WriteLine($"{words[i]} {i}");
-                    }
 
-
-                    Debug.WriteLine(myFileName);
-
+                    //Get student name
                     if (NameCheckBox.IsChecked == true)
                     {
                         for (int i = 0; i < words.Length; i++)
                         {
                             switch(i)
                                 {
+                                //Father last name
                                 case 70:
 
                                     shitToPrint += $"{words[i]} ";
                                     break;
 
-
+                                //Mother last name
                                 case 71:
 
                                     shitToPrint += $"{words[i]} ";
                                     break;
 
+                                //Fist name
                                 case 72:
 
                                     shitToPrint += $"{words[i]} ";
                                     break;
 
+                                //Second name?
                                 case 73:
 
                                     shitToPrint += $"{words[i]}\t";
@@ -93,6 +89,7 @@ namespace TutoTool
                         }
                     }
 
+                    //Get student ID
                     if (IDCheckBox.IsChecked == true)
                     {
                         for (int i = 0; i < words.Length; i++)
@@ -108,6 +105,7 @@ namespace TutoTool
                         }
                     }
 
+                    //Get student status
                     if(StatusCheckBox.IsChecked == true)
                     {
                         for (int i = 0; i < words.Length; i++)
@@ -121,12 +119,14 @@ namespace TutoTool
                         }
                     }
 
+                    //Get student GPA
                     if (GPACheckBox.IsChecked == true)
                     {
                         int position = words.Length - 42;
                         shitToPrint += $"{words[position]}\t";
                     }
 
+                    //Get student percentage
                     if(PercentageCheckBox.IsChecked == true)
                     {
                         int position = words.Length - 45;
