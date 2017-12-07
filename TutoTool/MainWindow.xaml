@@ -13,18 +13,20 @@
             <ColumnDefinition Width="807*"/>
             <ColumnDefinition Width="33*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="button" Content="Importar a excel" Grid.Column="2" HorizontalAlignment="Left" Height="54" Margin="331,384,0,0" VerticalAlignment="Top" Width="168" Click="button_Click" FontSize="20"/>
+        <Button x:Name="btnExportExcel" Content="Exportar a Excel" Grid.Column="2" HorizontalAlignment="Left" Height="54" Margin="336,370,0,0" VerticalAlignment="Top" Width="168" Click="BtnExportExcel_Click" FontSize="20"/>
         <Label x:Name="label" Content="TutoTool" Grid.Column="2" HorizontalAlignment="Left" Height="58" Margin="318,10,0,0" VerticalAlignment="Top" Width="156" FontSize="36" FontWeight="Bold" RenderTransformOrigin="1.49,0.667"/>
-        <Button HorizontalAlignment="Left" Height="62" Margin="532,192,0,0" VerticalAlignment="Top" Width="194" Click="Button_Click_1" Grid.Column="2">
-            <Label Content="Seleccionar archivo" FontSize="20"/>
-        </Button>
+        <Button x:Name="btnOpenFile" Content="Seleccionar archivo"  HorizontalAlignment="Left" Height="62" Margin="504,212,0,0" VerticalAlignment="Top" Width="194" Click="BtnOpenFile_Click" Grid.Column="2" FontSize="20" RenderTransformOrigin="0.304,0.065" />
         <Label Content="Seleccionar campos" Grid.Column="2" HorizontalAlignment="Left" Height="46" Margin="41,106,0,0" VerticalAlignment="Top" Width="244" FontSize="24" FontWeight="Bold"/>
-        <CheckBox Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="3,173,0,0" VerticalAlignment="Top" Width="156" Checked="CheckBox_Checked" FontSize="20" Grid.Column="2"/>
-        <CheckBox Content="Matricula" HorizontalAlignment="Left" Height="43" Margin="3,231,0,0" VerticalAlignment="Top" Width="156" Checked="CheckBox_Checked_5" FontSize="20" Grid.Column="2"/>
-        <CheckBox Content="Periodo " Grid.Column="2" HorizontalAlignment="Left" Height="34" Margin="213,173,0,0" VerticalAlignment="Top" Width="156" Checked="CheckBox_Checked_1" FontSize="20"/>
-        <CheckBox Content="Status" Grid.Column="2" HorizontalAlignment="Left" Height="43" Margin="213,231,0,0" VerticalAlignment="Top" Width="132" Checked="CheckBox_Checked_2" FontSize="20"/>
-        <CheckBox Content="Promedio" HorizontalAlignment="Left" Margin="3,285,0,0" VerticalAlignment="Top" Height="43" Width="156" Checked="CheckBox_Checked_3" FontSize="20" Grid.Column="2"/>
-        <CheckBox Content="Recursos" Grid.Column="2" HorizontalAlignment="Left" Height="43" Margin="213,285,0,0" VerticalAlignment="Top" Width="162" Checked="CheckBox_Checked_4" FontSize="20"/>
-
+        <Viewbox Grid.Column="2" Margin="3,173,432,141" Stretch="Fill">
+            <Grid Height="155" Width="372">
+                <CheckBox x:Name="NameCheckBox" Content="Nombre" Height="34" VerticalAlignment="Top" FontSize="20" Margin="0,0,216,0"/>
+                <CheckBox x:Name="IDCheckBox" Content="Matricula" HorizontalAlignment="Left" Height="43" Margin="0,58,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
+                <CheckBox x:Name="PeriodCheckBox" Content="Periodo " HorizontalAlignment="Left" Height="34" Margin="210,0,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
+                <CheckBox x:Name="StatusCheckBox" Content="Status" HorizontalAlignment="Left" Height="43" Margin="210,58,0,0" VerticalAlignment="Top" Width="132" FontSize="20"/>
+                <CheckBox x:Name="GPACheckBox" Content="Promedio" HorizontalAlignment="Left" Margin="0,112,0,0" VerticalAlignment="Top" Height="43" Width="156" FontSize="20" />
+                <CheckBox x:Name="PercentageCheckBox" Content="Porcentaje" HorizontalAlignment="Left" Height="43" Margin="210,112,0,0" VerticalAlignment="Top" Width="162" FontSize="20"/>
+            </Grid>
+        </Viewbox>
+        <Label Content="Seleccionar cárdex PDF" Grid.Column="2" HorizontalAlignment="Left" Height="46" Margin="486,106,0,0" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold"/>
     </Grid>
 </Window>
