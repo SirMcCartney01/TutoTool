@@ -36,7 +36,7 @@ namespace TutoTool
             {
 
                 // TODO: verify if user checked at least one box
-                if(NameCheckBox.IsChecked == false && PeriodCheckBox.IsChecked == false && IDCheckBox.IsChecked == false && StatusCheckBox.IsChecked == false && GPACheckBox.IsChecked == false && FailCheckBox.IsChecked == false)
+                if(NameCheckBox.IsChecked == false && PeriodCheckBox.IsChecked == false && IDCheckBox.IsChecked == false && StatusCheckBox.IsChecked == false && GPACheckBox.IsChecked == false && PercentageCheckBox.IsChecked == false)
                 {
                     MessageBox.Show("Debes elegir al menos una opcion", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
@@ -54,10 +54,10 @@ namespace TutoTool
                         MessageBox.Show($"Hubo un error al intentar abrir el archivo\n{ex}", "¡Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                     
-                    /*for (int i = 0; i < words.Length; i++)
+                    for (int i = 0; i < words.Length; i++)
                     {
                         Console.WriteLine($"{words[i]} {i}");
-                    }*/
+                    }
 
 
                     Debug.WriteLine(myFileName);
@@ -91,6 +91,46 @@ namespace TutoTool
                                     
                             }
                         }
+                    }
+
+                    if (IDCheckBox.IsChecked == true)
+                    {
+                        for (int i = 0; i < words.Length; i++)
+                        {
+                            switch (i)
+                            {
+                                case 54:
+                                    string helper = words[i];
+                                    string []newWord = helper.Split(':');
+                                    shitToPrint += $"{newWord[1]}\t";
+                                    break;
+                            }
+                        }
+                    }
+
+                    if(StatusCheckBox.IsChecked == true)
+                    {
+                        for (int i = 0; i < words.Length; i++)
+                        {
+                            switch (i)
+                            {
+                                case 83:
+                                    shitToPrint += $"{words[i]}\t";
+                                    break;
+                            }
+                        }
+                    }
+
+                    if (GPACheckBox.IsChecked == true)
+                    {
+                        int position = words.Length - 42;
+                        shitToPrint += $"{words[position]}\t";
+                    }
+
+                    if(PercentageCheckBox.IsChecked == true)
+                    {
+                        int position = words.Length - 45;
+                        shitToPrint += $"{words[position]}\t";
                     }
 
                     // If the file doesn't exists

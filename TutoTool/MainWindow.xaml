@@ -24,7 +24,7 @@
                 <CheckBox x:Name="PeriodCheckBox" Content="Periodo " HorizontalAlignment="Left" Height="34" Margin="210,0,0,0" VerticalAlignment="Top" Width="156" FontSize="20"/>
                 <CheckBox x:Name="StatusCheckBox" Content="Status" HorizontalAlignment="Left" Height="43" Margin="210,58,0,0" VerticalAlignment="Top" Width="132" FontSize="20"/>
                 <CheckBox x:Name="GPACheckBox" Content="Promedio" HorizontalAlignment="Left" Margin="0,112,0,0" VerticalAlignment="Top" Height="43" Width="156" FontSize="20" />
-                <CheckBox x:Name="FailCheckBox" Content="Recursos" HorizontalAlignment="Left" Height="43" Margin="210,112,0,0" VerticalAlignment="Top" Width="162" FontSize="20"/>
+                <CheckBox x:Name="PercentageCheckBox" Content="Porcentaje" HorizontalAlignment="Left" Height="43" Margin="210,112,0,0" VerticalAlignment="Top" Width="162" FontSize="20"/>
             </Grid>
         </Viewbox>
         <Label Content="Seleccionar cárdex PDF" Grid.Column="2" HorizontalAlignment="Left" Height="46" Margin="486,106,0,0" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold"/>
